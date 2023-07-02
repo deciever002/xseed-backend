@@ -40,4 +40,6 @@ app.use('/',require('./routes/index'))
 //listen app on port
 app.listen(process.env.PORT || 8000, () => {
     console.log(`Server started on port ${process.env.PORT || 5000}`)
-})
+});
+
+module.exports = app;
