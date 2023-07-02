@@ -14,6 +14,8 @@ app.use(cors({
     origin: ["http://localhost:3000"],
     credentials: true
 }))
+app.set('trust proxy', 1);
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
