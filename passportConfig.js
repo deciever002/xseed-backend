@@ -23,6 +23,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' },async (email,password,
 }));
 
 passport.serializeUser((user,done) => {
+    console.log("Serialized user",user);
     done(null,user.id);
 })
 
