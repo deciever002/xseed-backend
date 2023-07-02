@@ -30,7 +30,12 @@ app.use(session({
     saveUninitialized: true,
     store: sessionStore,
     resave: false,
-    cookie: {maxAge: 1000 * 60 * 60 * 24,secure: true}
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24,
+        secure: true,
+        sameSite: "none",
+        domain: "onrender.com",
+    }
 }));
 
 app.use(passport.initialize());
