@@ -12,7 +12,7 @@ router.get('/failureJson',(req,res) => {
     res.send('Invalid Username or Password!');
 });
 router.get('/successJson',(req,res) => {
-    console.log(req.user);
+    console.log(req);
     res.send({user: req.user});
 });
 
