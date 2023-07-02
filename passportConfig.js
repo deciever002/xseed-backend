@@ -31,6 +31,7 @@ passport.deserializeUser(async (id,done) => {
     try{
         //find the user from session by passing id
         let user = await User.findById(id);
+        console.log("Deserialized user",user,id);
         done(null,user);
     }catch(err){
         //if something went wrong while deserializing pass err object in callback with second argument as false
