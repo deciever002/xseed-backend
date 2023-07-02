@@ -32,6 +32,7 @@ app.use(session({
 }));
 
 app.use((req,res,next) => {
+    console.log(req.user);
     console.log(req.session);
     next();
 })
