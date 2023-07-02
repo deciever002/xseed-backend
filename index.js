@@ -31,12 +31,6 @@ app.use(session({
     cookie: {maxAge: 1000 * 60 * 60 * 24}
 }));
 
-app.use((req,res,next) => {
-    console.log(req.user);
-    console.log(req.session);
-    next();
-})
-
 app.use(passport.initialize());
 app.use(passport.session());
 
