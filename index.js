@@ -11,7 +11,8 @@ const passportLocalStrategy = require('./passportConfig')
 //initialized express app
 const app = express();
 app.use(cors({
-    origin: true
+    origin: true,
+    credentials: true
 }))
 
 app.use(bodyParser.json());
