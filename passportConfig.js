@@ -18,11 +18,12 @@ passport.use(new LocalStrategy({ usernameField: 'email' },async (email,password,
 
     } catch (error) {
         console.log(error);
+        return done(error);
     }
 }));
 
-passport.serializeUser((user,cb) => {
-    cb(null,user.id);
+passport.serializeUser((user,done) => {
+    done(null,user.id);
 })
 
 passport.deserializeUser(async (id,done) => {
@@ -35,4 +36,6 @@ passport.deserializeUser(async (id,done) => {
         console.log("error occured while deserializing",err);
         done(err,false);
     }
-})
+});
+
+module.exports = passport;
