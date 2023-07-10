@@ -11,7 +11,7 @@ const passportLocalStrategy = require('./passportConfig')
 //initialized express app
 const app = express();
 app.use(cors({
-    origin: ["http://localhost:3000","https://xseed-backend.vercel.app"],
+    origin: true,
     credentials: true
 }))
 app.set('trust proxy', 1);
