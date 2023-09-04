@@ -42,7 +42,10 @@ app.use(passport.session());
 app.use((req,res,next) => { console.log(req.session); next();});
 
 
-app.use('/',require('./routes/index'))
+app.use('/',require('./routes/index'));
+app.get('/',(req,res) => {
+    res.send('App started running');
+});
 
 //listen app on port
 app.listen(process.env.PORT || 8000, () => {
